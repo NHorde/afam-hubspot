@@ -1,0 +1,2 @@
+hubspot3
+python-dotenv

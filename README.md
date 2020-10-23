@@ -21,4 +21,4 @@ Run script
 ```shell script
 python main.py
 ```
-The result will be called `backfill_{date}.csv` and will be placed in the `results` folder
+The result will be called `backfill_{date}.csv` and will be placed in the `data` folder
