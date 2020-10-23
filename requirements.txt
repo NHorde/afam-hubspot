@@ -1,2 +1,2 @@
-hubspot3
 python-dotenv
+requests
