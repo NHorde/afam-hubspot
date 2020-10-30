@@ -51,7 +51,10 @@ def parse_request(state: State, response: str):
     :return:
     :rtype:
     """
+    properties_mapping = {}
+
     for result in response["results"]:
-        # print(result["label"])
-        if result["name"] in PROPERTIES_VIEW:
-            print(result["name"])
+        if result["label"] in PROPERTIES_VIEW:
+            properties_mapping[result["label"]] = result["name"]
+            # print(result["name"])
+    print(properties_mapping)
