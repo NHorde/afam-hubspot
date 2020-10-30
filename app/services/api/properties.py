@@ -7,6 +7,7 @@ import requests
 
 # Local
 from libs.state import State
+from libs.utils import lower_strip_string
 from libs.logger import BASE_LOGGER
 logger = BASE_LOGGER.getChild(__name__)
 
@@ -52,7 +53,8 @@ def parse_request(state: State, response: str):
     :rtype:
     """
     properties_mapping = {}
-
+    print(lower_strip_string("Hello World"))
+    exit(1)
     for result in response["results"]:
         if result["label"] in PROPERTIES_VIEW:
             properties_mapping[result["label"]] = result["name"]
