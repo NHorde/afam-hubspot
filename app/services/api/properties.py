@@ -1,5 +1,6 @@
 # Python
 import os
+from libs.constants import PROPERTIES_VIEW
 
 # 3rd Party
 import requests
@@ -10,12 +11,16 @@ from libs.logger import BASE_LOGGER
 logger = BASE_LOGGER.getChild(__name__)
 
 def request_properties_api(state: State):
+    """
+    Properties API
 
+    :param state:
+    :type state:
+    :return:
+    :rtype:
+    """
     API_KEY = os.getenv("API_KEY")
-
     API_URL = os.getenv("API_URL")
-
-    headers = {}
 
     url = f"{API_URL}/crm/v3/properties/Contact"
 
@@ -33,8 +38,20 @@ def request_properties_api(state: State):
         params=querystring
     )
 
-    response = response.json()
+    return parse_request(state=state, response = response.json())
 
-    # print(json.dumps(response, indent=3))
+def parse_request(state: State, response: str):
+    """
+    Parsing properties API
 
-    print(response["results"][0])
+    :param state:
+    :type state:
+    :param response: string
+    :type response: string
+    :return:
+    :rtype:
+    """
+    for result in response["results"]:
+        # print(result["label"])
+        if result["name"] in PROPERTIES_VIEW:
+            print(result["name"])
