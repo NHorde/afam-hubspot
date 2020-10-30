@@ -22,7 +22,7 @@ PROPERTIES_VIEW = [
     "Company Size",
     "Email Domain",
     "Industry",
-
+]
 
 
 
