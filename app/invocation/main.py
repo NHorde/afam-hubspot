@@ -34,7 +34,8 @@ response = requests.request(
 
 response = response.json()
 
-print(json.dumps(response, indent=3))
+# print(json.dumps(response, indent=3))
 
+print(response["results"][0])
 
 
