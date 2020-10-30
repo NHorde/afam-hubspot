@@ -34,4 +34,5 @@ def invoke(state: State):
 
 if __name__ == "__main__":
     logger.info("Initialization of the script")
+
     invoke(state = State())
