@@ -15,7 +15,7 @@ HANDLER.setLevel(level=getattr(logging, getenv("LOG_LEVEL", "INFO").upper()))
 logging.getLogger().handlers = []
 logging.getLogger().addHandler(hdlr=HANDLER)
 
-BASE_LOGGER = logging.getLogger("route")
+BASE_LOGGER = logging.getLogger("app")
 BASE_LOGGER.setLevel(level=HANDLER.level)
 
 
